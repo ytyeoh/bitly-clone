@@ -1,12 +1,18 @@
-<!DOCTYPR html>
-<html>
-<head>
-  <title>  Shorten Link</title>
-</head>
-<body><h1>Hello World</h1>
-<p>See Me in views/static/done.html.erb</p>
-<p>your short url : <a href="localhost:9393/<%=@url.short_url%>">localhost:9393/<%=@url.short_url%></a></p>
+<div class="jumbotron">
+      <div class="container"><h1>New Url</h1>
+<p>You just genarate a new short url for <a href="<%=@url.long_url%>"><%=@url.long_url%></a></p>
+
+<p>your new short url : <a href="http://localhost:9393/<%=@url.short_url%>">localhost:9393/<%=@url.short_url%></a></p>
+ </div>
+    </div>
+     <div class="container">
+        <h1>Another Long Url</h1>
+        <p>Generate another new short url</p>
+         <form  action = "/urls" method="post">
+          Your Long url:<input type="text" name="long_url" placeholder="Enter url">
 
 
-</body>
-</html>
+           <button type="submit" value="Submit" class="btn btn-success">Convert</button>
+          </form>
+
+      </div>

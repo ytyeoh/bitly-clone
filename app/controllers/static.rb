@@ -1,6 +1,7 @@
 require 'byebug'
 
 get '/' do
+  @desc ="Site to create short url."
   erb :"static/index"
 end
 
@@ -19,7 +20,7 @@ end
 
 get '/done' do
   @url = Url.last
-
+  @desc ="short url success generate"
   erb :"static/done"
 end
 
@@ -34,5 +35,10 @@ get '/:short_url' do
   redirect to(x.long_url)
 end
 
+get '/done' do
+  @url = Url.last
+  @desc ="short url success generate"
+  erb :"static/done"
+end
 
 
