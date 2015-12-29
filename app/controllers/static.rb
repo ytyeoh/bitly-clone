@@ -10,7 +10,17 @@ post '/urls' do
   url.shorten
   # byebug
   if url.save
-    redirect to('/done')
+    return "
+    <tr>
+    <td>Long Url  :</td>
+    <td><a href = '#{url.long_url}'>#{url.long_url}</a></td>    
+    
+  </tr>
+  <tr>
+    
+    <td>Short Url  :</td>    
+    <td><a href ='http://localhost:9393/#{url.short_url}'>localhost:9393/#{url.short_url}</a></td>
+  </tr>"
   else
     @errors = url.errors.full_messages
     # byebug
